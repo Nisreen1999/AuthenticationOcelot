@@ -1,0 +1,23 @@
+{
+  "Version": 1,
+  "Hash": "FvT29TtYYqA28+8o/PjJ5MctG+n3sALkgGf0G0/Lt0s=",
+  "Source": "Course",
+  "BasePath": "_content/Course",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\nisreen.wardeh\\source\\repos\\AuthOcelot\\OcelotGateWay\\OcelotGateWay.csproj",
+      "Version": 2,
+      "Source": "OcelotGateWay",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

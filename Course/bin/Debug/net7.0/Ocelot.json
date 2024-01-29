@@ -1,0 +1,55 @@
+{
+  "GlobalConfiguration": {
+    //URL for site gateway
+    "BaseUrl": "https://localhost:7048"
+  },
+  "AuthenticationOptions": {
+    "AuthenticationProviderKey": "Bearer",
+    "AllowedScopes": []
+  },
+  "Routes": [
+    //هون بعرف microservices
+
+    //the first and second micro service
+    {
+      //path URL
+      //DownstreamPathTemplate -->هو عنوان URL --> لواجهة microservices --> و الذي يتم استدعاؤه فعليا عندما يتصل العميل بخدمة معينة 
+      "DownstreamPathTemplate": "/api/Students",
+      //البروتوكول الي بدي استخدمه
+      "DownstreamSchema": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7087
+        }
+      ],
+      // لما بدي احكي مع gateway  شو url  الي بدي استخدمه
+      //UpsreamPathTemplate --> URL الذي Students للعميل 
+      "UpstreamPathTemplate": "/ApiGateway/Students",
+      // http method  الي بدي استخدمه
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Courses",
+      "DownstreamSchema": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7035
+        }
+      ],
+      "UpstreamPathTemplate": "/ApiGateway/Courses",
+      "UpstreamHttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "addHeadersToRequest": {
+        "roles": "Admin"
+      },
+      "RouteCliamsRequirement": {
+        "Role": "Admin"
+      }
+    }
+  ]
+}
